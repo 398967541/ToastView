@@ -52,10 +52,10 @@ static ToastView *toast = nil;
 - (void) displayToastWithMessage:(NSString *) message
 {
     
-    if ([UserDefautManager gettostID]) {
-        
-        [UserDefautManager savetostID:NO];
-        
+//    if ([UserDefautManager gettostID]) {
+//
+//        [UserDefautManager savetostID:NO];
+    
         if (!message || ([message isEqualToString:@""])||([message isEqual:[NSNull null]]))
         {
             message = @"Invalid Message For Toast";
@@ -73,9 +73,9 @@ static ToastView *toast = nil;
         [self performSelector:@selector(close) withObject:self afterDelay:1.8];
         
         //    timerToast = [NSTimer scheduledTimerWithTimeInterval:ToastDelayTime target:self selector:@selector(close) userInfo:nil repeats:NO];
-    }else{
-        
-    }
+//    }else{
+//
+//    }
     
 
  
@@ -95,7 +95,7 @@ static ToastView *toast = nil;
         self.alpha = 0.0;
     }completion:^(BOOL finished){
         [self removeFromSuperview];
-        [UserDefautManager savetostID:YES];
+//        [UserDefautManager savetostID:YES];
 
     }];
 }
